@@ -26,11 +26,10 @@ jobs:
       uses: actions/setup-node@v2-beta
       with:
         node-version: 12  
- 
+         
     - name: GitHub Action for Yarn
       uses: borales/actions-yarn@v2.0.0
       with:
-        # Yarn command
         cmd: install
           
     - name: Creating build
@@ -40,4 +39,4 @@ jobs:
       run:  npm install -g surge
       
     - name: deploying on surge
-      run: surge ./build http://bootcamp_reactapp_01.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
+      run: surge ./build bootcamp_reactapp_01.surge.sh --token ${{secrets.SURGE_TOKEN}}
